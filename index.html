@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ayush | Video Editor Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
+  <style>
+    /* Basic Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background-color: #fff5f7; /* Pale Pink Background */
+      color: #2d1a1e; /* Dark Text */
+      line-height: 1.6;
+    }
+
+    /* Navigation */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      padding: 20px 5%;
+      background: rgba(255, 255, 255, 0.9);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+
+    .logo {
+      font-weight: 700;
+      font-size: 24px;
+      color: #ff2d75; /* Hot Pink */
+      text-decoration: none;
+    }
+
+    /* Hero Section */
+    .hero {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background: linear-gradient(135deg, #fff5f7 0%, #fce4ec 100%);
+      padding: 0 20px;
+    }
+
+    .hero p {
+      color: #ff85a1;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      font-weight: 500;
+      margin-bottom: 10px;
+    }
+
+    .hero h1 {
+      font-size: 60px;
+      margin: 0;
+    }
+
+    .hero h1 span {
+      color: #ff2d75;
+    }
+
+    /* Section Styling */
+    .container {
+      padding: 80px 10%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    h2 {
+      font-size: 36px;
+      margin-bottom: 30px;
+      border-bottom: 4px solid #ff85a1;
+      display: inline-block;
+    }
+
+    /* About Section */
+    .about-flex {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .about-text {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    .about-text h3 {
+      color: #ff2d75;
+      margin-bottom: 15px;
+    }
+
+    .about-image {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    .about-image img {
+      width: 100%;
+      border-radius: 20px;
+      border: 5px solid #ffffff;
+      box-shadow: 15px 15px 0px #fce4ec;
+    }
+
+    /* Portfolio Grid */
+    .work-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+
+    .work-card {
+      background: #ffffff;
+      border-radius: 15px;
+      overflow: hidden;
+      border: 1px solid #fce4ec;
+      transition: 0.3s;
+    }
+
+    .work-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(255, 45, 117, 0.1);
+    }
+
+    .video-box {
+      background: #000;
+      line-height: 0;
+    }
+
+    .video-box video {
+      width: 100%;
+      height: auto;
+    }
+
+    .card-content {
+      padding: 20px;
+    }
+
+    .card-content h4 {
+      margin-bottom: 10px;
+      color: #2d1a1e;
+    }
+
+    .card-content p {
+      font-size: 14px;
+      color: #6d4c51;
+    }
+
+    /* Contact Section */
+    .contact-section {
+      text-align: center;
+      background-color: #fce4ec;
+      padding: 100px 20px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 15px 40px;
+      background-color: #ff2d75;
+      color: #fff;
+      text-decoration: none;
+      font-weight: 700;
+      border-radius: 50px;
+      margin-top: 25px;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background-color: #e61e65;
+      box-shadow: 0 5px 15px rgba(255, 45, 117, 0.4);
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px;
+      background: #fff;
+      font-size: 14px;
+      color: #6d4c51;
+    }
+
+    /* Reveal Animation Class */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s ease-out;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 40px; }
+      .container { padding: 60px 5%; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="#" class="logo">AYUSH</a>
+  </nav>
+
+  <div class="hero">
+    <p>Editor & Director</p>
+    <h1>I'M <span>AYUSH</span></h1>
+  </div>
+
+  <div class="container reveal" id="about">
+    <h2>About Me</h2>
+    <div class="about-flex">
+      <div class="about-text">
+        <h3>Crafting Visual Excellence</h3>
+        <p>Hi, I'm Ayush. I'm a passionate video editor dedicated to turning raw concepts into polished, cinematic masterpieces. My approach combines technical precision with a deep understanding of rhythm and emotion.</p>
+        <p>With an eye for detail and a love for vibrant, bold aesthetics, I specialize in high-energy edits, commercial storytelling, and creative content that stands out in a crowded digital landscape.</p>
+      </div>
+      <div class="about-image">
+        <img src="https://images.unsplash.com/photo-1550156064-47320e6da24b?auto=format&fit=crop&q=80&w=1000" alt="Ayush workspace">
+      </div>
+    </div>
+  </div>
+
+  <div class="container reveal">
+    <h2>My Work</h2>
+    <div class="work-grid">
+      <div class="work-card">
+        <div class="video-box">
+          <video controls poster="https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?auto=format&fit=crop&q=80&w=500">
+            <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="card-content">
+          <h4>Fashion Highlight</h4>
+          <p>Dynamic cuts and stylized transitions for a boutique brand.</p>
+        </div>
+      </div>
+
+      <div class="work-card">
+        <div class="video-box">
+          <video controls poster="https://images.unsplash.com/photo-1492691523567-61709d1ee5b4?auto=format&fit=crop&q=80&w=500">
+            <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="card-content">
+          <h4>Cinematic Short</h4>
+          <p>A deep dive into narrative pacing and color grading.</p>
+        </div>
+      </div>
+
+      <div class="work-card">
+        <div class="video-box">
+          <video controls poster="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&q=80&w=500">
+            <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="card-content">
+          <h4>Creative Reel</h4>
+          <p>A compilation of motion graphics and visual effects.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="contact-section reveal">
+    <h2>Let's Connect</h2>
+    <p>Ready to make something amazing together?</p>
+    <a href="mailto:ayush@example.com" class="btn">GET IN TOUCH</a>
+  </div>
+
+  <footer>
+    <p>&copy; 2026 AYUSH | Designed with love & pink.</p>
+  </footer>
+
+  <script>
+    // Simple Scroll Reveal Function
+    function revealOnScroll() {
+      var reveals = document.querySelectorAll(".reveal");
+      for (var i = 0; i < reveals.length; i++) {
+        var windowHeight = window.innerHeight;
+        var elementTop = reveals[i].getBoundingClientRect().top;
+        var elementVisible = 150;
+        if (elementTop < windowHeight - elementVisible) {
+          reveals[i].classList.add("visible");
+        }
+      }
+    }
+
+    // Check on scroll
+    window.addEventListener("scroll", revealOnScroll);
+   
+    // Check once on load
+    window.onload = revealOnScroll;
+  </script>
+
+</body>
+</html>
